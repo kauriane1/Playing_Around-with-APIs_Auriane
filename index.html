@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainyPlay – Fun & Learn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 BrainyPlay</h1>
+    <p>Tap the button to learn something fun!</p>
+
+    <div class="controls">
+      <select id="categorySelect">
+        <option value="9">General Knowledge</option>
+        <option value="17">Science & Nature</option>
+        <option value="23">History</option>
+      </select>
+      <button onclick="fetchTrivia()">🎲 Get a Question!</button>
+    </div>
+
+    <div class="trivia-box">
+      <p id="question">Your question will appear here!</p>
+      <ul id="answers"></ul>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
