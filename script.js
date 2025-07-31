@@ -87,13 +87,13 @@ function showWrongFeedback(element) {
   }, 2000);
 }
 
-// 🎉 Trigger multiple effects for fun
+// Trigger multiple effects for fun
 function triggerConfetti() {
   createConfetti();
   createFireworks();
 }
 
-// 🎇 Confetti burst
+// Confetti burst
 function createConfetti() {
   confetti({
     particleCount: 150,
@@ -102,7 +102,7 @@ function createConfetti() {
   });
 }
 
-// ✨ Fireworks burst
+// Fireworks burst
 function createFireworks() {
   confetti({
     particleCount: 80,
