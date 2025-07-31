@@ -1,0 +1,14 @@
+{
+  "name": "BrainyPlay DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18", 
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "echo 'Container ready!'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker"]
+    }
+  }
+}
