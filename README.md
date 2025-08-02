@@ -30,20 +30,15 @@ A `Dockerfile` was created to build and run the application in a container. The 
 
 To build and test the application locally:
 
-docker build -t kauriane/brains:v1.0
-docker run -p 8080:8080 kauriane/brains:v1.0
-curl http://localhost:8080
-Push to Docker Hub
-docker login
-docker push kauriane/brains:v1.0
-Semantic versioning tags such as v1.0 and latest are used.
-
-Deployment on Lab Machines
-SSH into the Docker VMs (web-01 and web-02) and run:
-docker pull <dockerhub-username>/brainyplay:v1
-
-docker run -d --name app --restart unless-stopped \
-  -p 8080:8080 <dockerhub-username>/brainyplay:v1
+-docker build -t kauriane/brains:v1.0
+-docker run -p 8080:8080 kauriane/brains:v1.0
+-curl http://localhost:8080
+-Push to Docker Hub
+-docker login
+-docker push kauriane/brains:v1.0
+-Semantic versioning tags such as v1.0 and latest are used.
+-docker pull kauriane/brains:v1.0
+-docker run -d --name brains --restart unless-stopped -p 8080:8080 kauriane/brainyplay:v1.0
 Each app instance should be accessible internally at:
 
 http://web-01:8080
@@ -52,6 +47,7 @@ http://web-02:8080
 
 Load Balancer Configuration (lb-01)
 The HAProxy configuration (/etc/haproxy/haproxy.cfg) was updated as follows:
+``bash``
 
 frontend http_front
     bind *:80
@@ -61,9 +57,10 @@ backend webapps
     balance round robin
     server web01 172.20.0.11:8080 check
     server web02 172.20.0.12:8080 check
+    
 To reload HAProxy after changes:
 docker exec -it lb-01 sh -c 'haproxy -sf $(pidof haproxy) -f /etc/haproxy/haproxy.cfg'
-End-to-End Testing
+End-to-End Testing.
 From the host machine, test using:
 curl http://localhost
 Multiple requests should return alternating responses from web-01 and web-02, confirming round-robin load balancing is functioning correctly.
