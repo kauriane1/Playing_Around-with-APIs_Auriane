@@ -68,6 +68,7 @@ From the host machine, test using:
 curl http://localhost
 Multiple requests should return alternating responses from web-01 and web-02, confirming round-robin load balancing is functioning correctly.
 
-Auriane<img width="511" height="325" alt="ANSWEREDPRAYER!" src="https://github.com/user-attachments/assets/d968c33d-adb8-4e4b-8968-25c55393299d" />
+<img width="511" height="325" alt="ANSWEREDPRAYER!" src="https://github.com/user-attachments/assets/d968c33d-adb8-4e4b-8968-25c55393299d" />
 
+Auriane
 BrainyPlay Web Application – July 2025
