@@ -59,10 +59,14 @@ backend webapps
     server web02 172.20.0.12:8081 check
     
 To reload HAProxy after changes:
+
 docker exec -it lb-01 sh -c 'haproxy -sf $(pidof haproxy) -f /etc/haproxy/haproxy.cfg'
-End-to-End Testing.
+End-to-End Testing
+
 From the host machine, test using:
-curl http://localhost
+
+curl http://localhost:8082/
+
 Multiple requests should return alternating responses from web-01 and web-02, confirming round-robin load balancing is functioning correctly.
 
 <img width="511" height="325" alt="ANSWEREDPRAYER!" src="https://github.com/user-attachments/assets/d968c33d-adb8-4e4b-8968-25c55393299d" />
