@@ -71,5 +71,9 @@ Multiple requests should return alternating responses from web-01 and web-02, co
 
 <img width="511" height="325" alt="ANSWEREDPRAYER!" src="https://github.com/user-attachments/assets/d968c33d-adb8-4e4b-8968-25c55393299d" />
 
+Below is a small demo video that talks about the usage of the web application!
+
+https://youtu.be/vSWjHiWiXZc
+
 Auriane
 BrainyPlay Web Application – July 2025
