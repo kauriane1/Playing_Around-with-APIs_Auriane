@@ -41,9 +41,9 @@ To build and test the application locally:
 -docker run -d --name brains --restart unless-stopped -p 8080:8080 kauriane/brainyplay:v1.0
 Each app instance should be accessible internally at:
 
-http://web-01:8080
+http://localhost:8081/ *web-02
 
-http://web-02:8080
+http://localhost:8080/ *web-01
 
 Load Balancer Configuration (lb-01)
 The HAProxy configuration (/etc/haproxy/haproxy.cfg) was updated as follows:
@@ -56,7 +56,7 @@ frontend http_front
 backend webapps
     balance round robin
     server web01 172.20.0.11:8080 check
-    server web02 172.20.0.12:8080 check
+    server web02 172.20.0.12:8081 check
     
 To reload HAProxy after changes:
 docker exec -it lb-01 sh -c 'haproxy -sf $(pidof haproxy) -f /etc/haproxy/haproxy.cfg'
